@@ -8,7 +8,7 @@ export default function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '35%'])
 
   return (
-    <section ref={ref} className="relative h-screen min-h-[600px] overflow-hidden flex items-center lg:items-end bg-[#F5F5F7]">
+    <section ref={ref} className="relative h-screen min-h-[600px] overflow-hidden flex items-center bg-[#F5F5F7]">
 
       {/* BG with parallax */}
       <motion.div style={{ y }} className="absolute inset-0 scale-110 will-change-transform">
@@ -29,7 +29,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-14 py-12 sm:py-0 sm:pb-20 lg:pb-28">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-14">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left gap-5 lg:gap-7 max-w-[780px] mx-auto lg:mx-0">
 
           <span className="animate-fadeup-1 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5">
