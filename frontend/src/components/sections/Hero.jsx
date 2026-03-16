@@ -40,8 +40,14 @@ export default function Hero() {
           </span>
 
           <h1
-            className="animate-fadeup-2 text-white leading-[.88] tracking-[-0.04em] uppercase"
-            style={{ fontSize: 'clamp(3.8rem, 11vw, 13rem)', fontFamily: 'Inter, -apple-system, sans-serif', fontWeight: 900 }}
+            className="animate-fadeup-2 text-white uppercase"
+            style={{ 
+              fontSize: 'clamp(3.8rem, 9vw, 11rem)', 
+              fontFamily: 'Inter, -apple-system, sans-serif', 
+              fontWeight: 900,
+              lineHeight: 0.88,
+              letterSpacing: '-0.04em'
+            }}
           >
             YOUR NEXT<br />
             FAVOURITE<br />

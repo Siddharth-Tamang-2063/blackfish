@@ -66,7 +66,7 @@ export default function Navbar() {
       <div className="h-8 bg-lime overflow-hidden flex items-center pause-on-hover">
         <div className="animate-marquee flex whitespace-nowrap">
           {doubled.map((t, i) => (
-            <span key={i} className="font-mono text-[10px] font-medium text-black tracking-[.15em] uppercase px-8">{t}</span>
+            <span key={i} className="font-mono text-[10px] font-medium text-white tracking-[.15em] uppercase px-8">{t}</span>
           ))}
         </div>
       </div>
