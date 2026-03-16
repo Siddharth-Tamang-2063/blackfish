@@ -53,7 +53,7 @@ export default function Shop() {
               className={`flex items-center justify-between w-full text-left font-mono text-[11px] tracking-[.06em] px-3 py-2.5 transition-all rounded-sm
                 ${cat === c
                   ? 'bg-lime/10 text-lime border-l-2 border-lime pl-3'
-                  : 'text-muted hover:text-ink hover:bg-ink/5 border-l-2 border-transparent'}`}>
+                  : 'text-[rgba(236,236,236,.45)] hover:text-ink hover:bg-white/5 border-l-2 border-transparent'}`}>
               <span>{c}</span>
               <span className="text-[9px] text-muted">
                 {c === 'All' ? products.length : products.filter(p => p.category === c).length}
@@ -70,8 +70,8 @@ export default function Shop() {
             <button key={s} onClick={() => set('size', sz === s ? '' : s)}
               className={`font-mono text-[10px] w-10 h-10 border transition-all
                 ${sz === s
-                  ? 'bg-ink text-white border-ink font-bold'
-                  : 'border-border text-muted hover:border-ink hover:text-ink'}`}>
+                  ? 'bg-lime text-black border-lime font-bold'
+                  : 'border-border text-muted hover:border-lime hover:text-lime'}`}>
               {s}
             </button>
           ))}
@@ -123,7 +123,7 @@ export default function Shop() {
             <span className="font-mono text-[10px] text-muted tracking-[.08em]">{filtered.length} RESULTS</span>
             <div className="flex items-center gap-5">
               <button onClick={() => setFilterOpen(true)}
-                className="lg:hidden font-mono text-[9px] tracking-[.2em] uppercase text-muted hover:text-ink transition-colors">
+                className="lg:hidden font-mono text-[9px] tracking-[.2em] uppercase text-muted hover:text-lime transition-colors">
                 FILTERS
               </button>
               <select value={sort} onChange={e => set('sort', e.target.value)}
@@ -140,7 +140,7 @@ export default function Shop() {
             {filtered.length === 0 ? (
               <motion.div key="empty" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
                 className="py-32 text-center">
-                <p className="font-disp text-[6rem] text-ink/5 leading-none mb-6">NOTHING<br />HERE</p>
+                <p className="font-disp text-[6rem] text-[rgba(236,236,236,.05)] leading-none mb-6">NOTHING<br />HERE</p>
                 <button onClick={reset} className="font-mono text-[9px] tracking-[.2em] uppercase text-lime underline">
                   RESET FILTERS
                 </button>
@@ -166,7 +166,7 @@ export default function Shop() {
               className="fixed left-0 top-0 bottom-0 w-72 bg-bg2 z-50 overflow-y-auto">
               <div className="flex items-center justify-between p-6 border-b border-border mb-6">
                 <span className="font-mono text-[9px] tracking-[.2em] uppercase">FILTERS</span>
-                <button onClick={() => setFilterOpen(false)} className="text-muted hover:text-ink">
+                <button onClick={() => setFilterOpen(false)} className="text-muted hover:text-lime">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
                   </svg>

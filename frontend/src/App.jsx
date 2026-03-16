@@ -41,7 +41,7 @@ function PageLoader() {
     <div className="min-h-screen flex items-center justify-center">
       <div className="flex items-center gap-2">
         {[0, 1, 2].map(i => (
-          <div key={i} className="w-px h-6 bg-lime animate-pulse"
+          <div key={i} className="w-px h-6 bg-ink animate-pulse"
             style={{ animationDelay: `${i * 100}ms`, opacity: 0.3 + i * 0.2 }} />
         ))}
       </div>
@@ -53,9 +53,9 @@ function PageLoader() {
 function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
-      <p className="font-disp text-[10rem] leading-none text-[rgba(236,236,236,.04)] mb-4">404</p>
+      <p className="font-disp text-[10rem] leading-none text-ink/5 mb-4">404</p>
       <h1 className="font-disp text-3xl text-ink uppercase tracking-[.04em] mb-3">Page Not Found.</h1>
-      <a href="/" className="font-mono text-[9px] tracking-[.2em] uppercase text-lime underline underline-offset-4 mt-2">
+      <a href="/" className="font-mono text-[9px] tracking-[.2em] uppercase text-ink underline underline-offset-4 mt-2">
         RETURN HOME
       </a>
     </div>

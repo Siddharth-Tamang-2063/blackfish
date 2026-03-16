@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCart } from '../../context/CartContext'
 import { useWishlist } from '../../context/WishlistContext'
-import { useScrollLock } from '../../hooks'
 import { products } from '../../data/products'
 import logo from '../../assets/logoblackfish.jpeg'
 
@@ -27,20 +26,8 @@ export default function Navbar() {
   const [results, setResults]     = useState([])
   const { itemCount }             = useCart()
   const { count: wishCount }      = useWishlist()
-  const { lock, unlock }          = useScrollLock()
 
-  useEffect(() => {
-    const h = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', h, { passive: true })
-    return () => window.removeEventListener('scroll', h)
-  }, [])
-
-  useEffect(() => { drawer ? lock() : unlock() }, [drawer, lock, unlock])
-  useEffect(() => {
-    const h = (e) => { if (e.key === 'Escape') { setSearch(false); setDrawer(false) } }
-    window.addEventListener('keydown', h)
-    return () => window.removeEventListener('keydown', h)
-  }, [])
+ 
 
   const handleSearch = (q) => {
     setQuery(q)
