@@ -19,8 +19,8 @@ function Ticker() {
     <div className="h-11 border-y border-border overflow-hidden flex items-center pause-on-hover">
       <div className="animate-marquee flex whitespace-nowrap">
         {doubled.map((t, i) => (
-          <div key={i} className="font-disp text-[16px] sm:text-[18px] tracking-[.08em] text-muted px-6 sm:px-10 flex items-center gap-6 sm:gap-10">
-            {t}<span className="text-lime text-[12px]">✦</span>
+          <div key={i} className="font-disp text-[16px] sm:text-[18px] tracking-[.08em] text-ink/50 px-6 sm:px-10 flex items-center gap-6 sm:gap-10">
+            {t}<span className="text-ink/30 text-[12px]">✦</span>
           </div>
         ))}
       </div>
@@ -131,7 +131,7 @@ export default function Home() {
           <div>
             <p className="font-mono text-[10px] tracking-[.2em] text-lime mb-2">/ 02</p>
             <h2 className="font-disp text-ink uppercase leading-[.9]" style={{ fontSize: 'clamp(2.2rem,6vw,7rem)' }}>
-              FEATURED<br /><span style={{ WebkitTextStroke: '1px #ECECEC', color: 'transparent' }}>PIECES</span>
+              FEATURED<br /><span style={{ WebkitTextStroke: '1px #1D1D1F', color: 'transparent' }}>PIECES</span>
             </h2>
           </div>
           <Link to="/shop" className="font-mono text-[9px] tracking-[.2em] uppercase text-muted border-b border-border2 pb-0.5 hover:text-ink transition-all whitespace-nowrap ml-4">
@@ -151,7 +151,7 @@ export default function Home() {
             <div>
               <p className="font-mono text-[10px] tracking-[.2em] text-lime mb-2">/ 03</p>
               <h2 className="font-disp text-ink uppercase leading-[.9]" style={{ fontSize: 'clamp(2.2rem,6vw,7rem)' }}>
-                TRENDING<br />RIGHT <span style={{ WebkitTextStroke: '1px #ECECEC', color: 'transparent' }}>NOW</span>
+                TRENDING<br />RIGHT <span style={{ WebkitTextStroke: '1px #1D1D1F', color: 'transparent' }}>NOW</span>
               </h2>
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function Footer() {
 
           {/* Brand — full width on mobile */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link to="/" className="font-disp text-3xl tracking-[.08em] text-ink block mb-3">
+            <Link to="/" className="text-2xl font-black tracking-[-0.03em] text-ink block mb-3" style={{ fontFamily: 'Inter, sans-serif' }}>
               BLACK<span className="text-lime"> FISH</span>
             </Link>
             <p className="font-mono text-[10px] leading-[1.85] text-muted max-w-[260px]">
@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="flex gap-5 mt-5">
               {['Instagram', 'Facebook', 'TikTok'].map(s => (
                 <a key={s} href="#"
-                  className="font-mono text-[8px] tracking-[.15em] uppercase text-muted hover:text-lime transition-colors">
+                  className="font-mono text-[8px] tracking-[.15em] uppercase text-muted hover:text-ink transition-colors">
                   {s}
                 </a>
               ))}
@@ -39,7 +39,7 @@ export default function Footer() {
               {categories.filter(c => c !== 'All').map(c => (
                 <li key={c}>
                   <Link to={`/shop?category=${encodeURIComponent(c)}`}
-                    className="font-mono text-[11px] tracking-[.06em] text-[rgba(236,236,236,.4)] hover:text-lime transition-colors">
+                    className="font-mono text-[11px] tracking-[.06em] text-muted hover:text-ink transition-colors">
                     {c}
                   </Link>
                 </li>
@@ -60,7 +60,7 @@ export default function Footer() {
               ].map(l => (
                 <li key={l.label}>
                   <Link to={l.to}
-                    className="font-mono text-[11px] tracking-[.06em] text-[rgba(236,236,236,.4)] hover:text-lime transition-colors">
+                    className="font-mono text-[11px] tracking-[.06em] text-muted hover:text-ink transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -93,7 +93,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-6 sm:pt-8">
-          <p className="font-mono text-[9px] text-[rgba(236,236,236,.2)] tracking-[.1em]">
+          <p className="font-mono text-[9px] text-muted/50 tracking-[.1em]">
             © 2025 BLACK FISH NEPAL. ALL RIGHTS RESERVED.
           </p>
           <div className="flex flex-wrap gap-2">

@@ -72,7 +72,7 @@ export default function Navbar() {
       </div>
 
       {/* Nav */}
-      <nav className={`sticky top-0 z-50 h-[60px] flex items-center bg-bg border-b border-border transition-all duration-300 ${scrolled ? 'shadow-[0_1px_0_rgba(186,255,41,.1)]' : ''}`}>
+      <nav className={`sticky top-0 z-50 h-[60px] flex items-center bg-bg border-b border-border transition-all duration-300 ${scrolled ? 'shadow-[0_1px_16px_rgba(0,0,0,0.08)]' : ''}`}>
         <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-14 flex items-center justify-between">
 
           {/* Logo */}
@@ -80,7 +80,7 @@ export default function Navbar() {
             <div className="w-9 h-9 rounded-full overflow-hidden   flex-shrink-0">
               <img src={logo} alt="Black Fish" className="w-full h-full object-cover" />
             </div>
-            <span className="font-disp text-[28px] tracking-[.1em] text-ink">
+            <span className="text-[22px] font-black tracking-[-0.03em] text-ink" style={{ fontFamily: 'Inter, sans-serif' }}>
               BLACK<span className="text-lime"> FISH</span>
             </span>
           </Link>
@@ -193,7 +193,7 @@ export default function Navbar() {
               transition={{ type: 'tween', duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               className="fixed left-0 top-0 bottom-0 w-72 bg-bg2 z-50 flex flex-col">
               <div className="flex items-center justify-between p-6 border-b border-border">
-                <span className="font-disp text-xl tracking-[.1em]">BLACK<span className="text-lime"> FISH</span></span>
+                <span className="text-xl font-black tracking-[-0.03em]" style={{ fontFamily: 'Inter, sans-serif' }}>BLACK<span className="text-lime"> FISH</span></span>
                 <button onClick={() => setDrawer(false)} className="text-muted hover:text-lime">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>

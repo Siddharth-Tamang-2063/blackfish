@@ -21,7 +21,7 @@ function Field({ label, error, children }) {
 }
 
 const inputCls = (hasErr) =>
-  `w-full bg-transparent border-b py-2.5 font-mono text-[12px] text-ink placeholder:text-[rgba(236,236,236,.2)] focus:outline-none transition-colors tracking-[.04em] ${hasErr ? 'border-red' : 'border-border2 focus:border-lime'}`
+  `w-full bg-transparent border-b py-2.5 font-mono text-[12px] text-ink placeholder:text-muted focus:outline-none transition-colors tracking-[.04em] ${hasErr ? 'border-red' : 'border-border2 focus:border-ink'}`
 
 export default function Contact() {
   const [form, setForm]   = useState({ name: '', email: '', subject: '', message: '' })
@@ -62,24 +62,25 @@ export default function Contact() {
 
   return (
     <div className="min-h-[calc(100vh-84px)] grid grid-cols-1 lg:grid-cols-2">
-      {/* Dark panel */}
-      <div className="bg-bg2 border-r border-border px-16 py-20 flex flex-col justify-between">
+
+      {/* Left info panel */}
+      <div className="bg-bg2 border-r border-border px-8 sm:px-12 lg:px-16 py-14 sm:py-20 flex flex-col justify-between gap-12">
         <div>
-          <p className="font-mono text-[9px] tracking-[.3em] uppercase text-lime mb-5">/ GET IN TOUCH</p>
-          <h1 className="font-disp text-ink uppercase leading-[.9] mb-14"
-            style={{ fontSize: 'clamp(3rem,5vw,6rem)' }}>
-            WE'D<br />LOVE TO<br /><span className="text-lime">HEAR YOU.</span>
+          <p className="font-mono text-[9px] tracking-[.3em] uppercase text-muted mb-5">/ GET IN TOUCH</p>
+          <h1 className="font-disp text-ink uppercase leading-[.9] mb-12"
+            style={{ fontSize: 'clamp(2.5rem,5vw,6rem)' }}>
+            WE'D<br />LOVE TO<br /><span className="text-ink">HEAR YOU.</span>
           </h1>
           {[
-            { l: 'EMAIL',   v: 'hello@blackfish.com.np',      href: 'mailto:hello@blackfish.com.np' },
-            { l: 'PHONE',   v: '+977 98-0000-0000',            href: 'tel:+9779800000000' },
+            { l: 'EMAIL',   v: 'hello@blackfish.com.np', href: 'mailto:hello@blackfish.com.np' },
+            { l: 'PHONE',   v: '+977 98-0000-0000',       href: 'tel:+9779800000000' },
             { l: 'ADDRESS', v: 'Kathmandu, Nepal' },
             { l: 'HOURS',   v: 'Sun – Fri, 10:00 – 18:00' },
           ].map(({ l, v, href }) => (
-            <div key={l} className="mb-7">
-              <p className="font-mono text-[8px] tracking-[.25em] uppercase text-muted mb-1.5">/ {l}</p>
-              <p className="font-mono text-[11px] tracking-[.04em] text-[rgba(236,236,236,.65)]">
-                {href ? <a href={href} className="hover:text-lime transition-colors">{v}</a> : v}
+            <div key={l} className="mb-6">
+              <p className="font-mono text-[8px] tracking-[.25em] uppercase text-muted mb-1">/ {l}</p>
+              <p className="font-mono text-[11px] tracking-[.04em] text-ink/70">
+                {href ? <a href={href} className="hover:text-ink transition-colors">{v}</a> : v}
               </p>
             </div>
           ))}
@@ -89,7 +90,7 @@ export default function Contact() {
           <div className="flex gap-5">
             {['Instagram', 'Facebook', 'TikTok'].map(s => (
               <a key={s} href="#"
-                className="font-mono text-[9px] tracking-[.18em] uppercase text-muted border-b border-transparent hover:text-lime hover:border-lime transition-all">
+                className="font-mono text-[9px] tracking-[.18em] uppercase text-muted border-b border-transparent hover:text-ink hover:border-ink transition-all">
                 {s.toUpperCase()}
               </a>
             ))}
@@ -97,14 +98,14 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Form panel */}
-      <div className="px-16 py-20 overflow-y-auto">
+      {/* Right form panel */}
+      <div className="px-8 sm:px-12 lg:px-16 py-14 sm:py-20 overflow-y-auto">
         <AnimatePresence mode="wait">
           {done ? (
             <motion.div key="success"
               initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               className="flex flex-col items-center justify-center h-full text-center py-20">
-              <div className="w-12 h-12 border border-lime flex items-center justify-center mb-6 text-lime">
+              <div className="w-12 h-12 border border-ink flex items-center justify-center mb-6 text-ink">
                 <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
                 </svg>
@@ -117,11 +118,11 @@ export default function Contact() {
           ) : (
             <motion.div key="form" animate={shake ? { x: [0, -6, 6, -4, 4, 0] } : { x: 0 }}
               transition={{ duration: 0.5 }}>
-              <h2 className="font-disp text-[2.8rem] text-ink uppercase tracking-[.04em] leading-[.9] mb-10">
+              <h2 className="font-disp text-[2.5rem] sm:text-[2.8rem] text-ink uppercase tracking-[.04em] leading-[.9] mb-10">
                 SEND A<br />MESSAGE
               </h2>
               <form onSubmit={handleSubmit} noValidate className="space-y-7">
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <Field label="Name" error={errs.name}>
                     <input type="text" value={form.name} onChange={change('name')}
                       placeholder="Your name" className={inputCls(!!errs.name)} />
@@ -147,7 +148,7 @@ export default function Contact() {
                 </Field>
 
                 <button type="submit" disabled={loading}
-                  className="w-full py-3.5 font-mono text-[9px] font-medium tracking-[.2em] uppercase bg-lime text-black hover:bg-[#d4ff5c] transition-colors disabled:opacity-40 flex items-center justify-center gap-2.5">
+                  className="w-full py-3.5 font-mono text-[9px] font-bold tracking-[.2em] uppercase bg-ink text-white hover:bg-ink/80 transition-colors disabled:opacity-40 flex items-center justify-center gap-2.5 rounded-full">
                   {loading ? (
                     <>
                       <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24">

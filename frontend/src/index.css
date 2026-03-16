@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --lime: #BAFF29;
-    --red: #FF3B00;
+    --accent: #1D1D1F;
+    --red: #FF3B30;
     --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
@@ -18,16 +18,18 @@
   }
 
   body {
-    background: #080808;
-    color: #ECECEC;
-    font-family: 'IBM Plex Mono', monospace;
+    background: #FFFFFF;
+    color: #1D1D1F;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background: #BAFF29;
-    color: #000;
+    background: #1D1D1F;
+    color: #FFFFFF;
   }
 
   ::-webkit-scrollbar {
@@ -36,11 +38,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #080808;
+    background: #F5F5F7;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #BAFF29;
+    background: #1D1D1F;
   }
 
   img {
@@ -62,26 +64,89 @@
 }
 
 @layer utilities {
+
+  /* Font utilities — now all Inter but different weights */
   .font-disp {
-    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
   }
 
   .font-edit {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 500;
   }
 
   .font-mono {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Geist Mono', 'SF Mono', Monaco, monospace;
+    font-weight: 500;
   }
 
   .text-stroke {
-    -webkit-text-stroke: 1px #ECECEC;
+    -webkit-text-stroke: 1px #1D1D1F;
     color: transparent;
   }
 
-  .text-stroke-lime {
-    -webkit-text-stroke: 1px #BAFF29;
-    color: transparent;
+  .text-lime {
+    color: #1D1D1F !important;
+  }
+
+  .bg-lime {
+    background: #1D1D1F !important;
+  }
+
+  .border-lime {
+    border-color: #1D1D1F !important;
+  }
+
+  .text-lime\/10 {
+    color: rgba(29, 29, 31, 0.1) !important;
+  }
+
+  .text-lime\/20 {
+    color: rgba(29, 29, 31, 0.2) !important;
+  }
+
+  .text-lime\/30 {
+    color: rgba(29, 29, 31, 0.3) !important;
+  }
+
+  .bg-lime\/5 {
+    background: rgba(29, 29, 31, 0.05) !important;
+  }
+
+  .bg-lime\/10 {
+    background: rgba(29, 29, 31, 0.07) !important;
+  }
+
+  .shadow-\[0_0_30px_rgba\(186\,255\,41\,0\.25\)\] {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .shadow-\[0_0_40px_rgba\(186\,255\,41\,0\.45\)\] {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .hover\:bg-\[#d4ff5c\]:hover {
+    background: #2D2D2F !important;
+  }
+
+  .from-lime {
+    --tw-gradient-from: #1D1D1F !important;
+  }
+
+  /* Green stays green */
+  .text-green-400 {
+    color: #34C759 !important;
+  }
+
+  .bg-green-400 {
+    background: #34C759 !important;
+  }
+
+  .bg-green-500 {
+    background: #34C759 !important;
   }
 
   .scrollbar-none {
@@ -142,7 +207,7 @@
   0%,
   100% {
     transform: scaleY(1);
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   50% {
@@ -188,12 +253,53 @@
   animation-play-state: paused;
 }
 
-/* Grain overlay */
+/* Grain overlay — lighter for white bg */
 .grain::after {
   content: '';
   position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.04;
+  opacity: 0.02;
   pointer-events: none;
+}
+
+/* ── Apple-style utility overrides ── */
+
+/* Announce bar — text white on black bg */
+.bg-lime {
+  background: #1D1D1F !important;
+}
+
+.bg-lime span,
+.bg-lime .font-mono {
+  color: #FFFFFF !important;
+}
+
+/* Card backgrounds */
+.bg-bg3 {
+  background: #F5F5F7 !important;
+}
+
+.bg-bg2 {
+  background: #F5F5F7 !important;
+}
+
+/* Borders */
+.border-border {
+  border-color: rgba(29, 29, 31, 0.1) !important;
+}
+
+.border-border2 {
+  border-color: rgba(29, 29, 31, 0.2) !important;
+}
+
+/* Image filters — reduce saturation less on white bg */
+.group:hover img,
+img {
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+/* Product card info section */
+.bg-bg3.border-t {
+  background: #FAFAFA !important;
 }

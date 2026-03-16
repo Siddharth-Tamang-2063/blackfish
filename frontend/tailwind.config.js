@@ -4,22 +4,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:      '#080808',
-        bg2:     '#111111',
-        bg3:     '#181818',
-        bg4:     '#1e1e1e',
-        ink:     '#ECECEC',
-        muted:   'rgba(236,236,236,0.35)',
-        lime:    '#BAFF29',
-        lime2:   '#8FCC00',
-        red:     '#FF3B00',
-        border:  'rgba(236,236,236,0.08)',
-        border2: 'rgba(236,236,236,0.18)',
+        // Apple-style black & white palette
+        bg: '#FFFFFF',   // pure white background
+        bg2: '#F5F5F7',   // apple light gray
+        bg3: '#E8E8ED',   // slightly darker gray
+        bg4: '#D2D2D7',   // border-ish
+        ink: '#1D1D1F',   // apple near-black
+        muted: 'rgba(29,29,31,0.55)',
+        lime: '#1D1D1F',   // accent = black (buttons etc)
+        lime2: '#000000',
+        red: '#FF3B30',   // keep red for sale badges
+        border: 'rgba(29,29,31,0.08)',
+        border2: 'rgba(29,29,31,0.18)',
       },
       fontFamily: {
-        disp: ['Bebas Neue', 'Impact', 'sans-serif'],
-        edit: ['Playfair Display', 'Georgia', 'serif'],
-        mono: ['IBM Plex Mono', 'Courier New', 'monospace'],
+        disp: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        edit: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        mono: ['Geist Mono', 'SF Mono', 'Monaco', 'monospace'],
       },
       letterSpacing: {
         widest2: '0.25em',

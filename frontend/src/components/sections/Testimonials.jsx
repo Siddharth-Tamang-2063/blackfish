@@ -4,7 +4,7 @@ function TestiCard({ t }) {
   return (
     <div className="flex-shrink-0 w-[280px] sm:w-[320px] bg-bg3 border border-border p-5 sm:p-7 mr-0.5">
       <div className="text-lime text-[11px] tracking-[.1em] mb-3 sm:mb-4">{'★'.repeat(t.rating)}</div>
-      <p className="font-edit italic text-sm sm:text-base text-[rgba(236,236,236,.8)] leading-[1.65] mb-4 sm:mb-5">"{t.review}"</p>
+      <p className="font-edit italic text-sm sm:text-base text-ink/70 leading-[1.65] mb-4 sm:mb-5">"{t.review}"</p>
       <p className="font-mono text-[8px] tracking-[.2em] uppercase text-lime mb-3">/ {t.product}</p>
       <div className="flex items-center gap-2.5 border-t border-border pt-3">
         <div className="w-8 h-8 rounded-full overflow-hidden border border-border2 flex-shrink-0">
@@ -29,7 +29,7 @@ export default function Testimonials() {
         <p className="font-mono text-[10px] tracking-[.2em] text-lime mb-2">/ 04</p>
         <h2 className="font-disp text-ink uppercase tracking-[.02em] leading-[.9]"
           style={{ fontSize: 'clamp(2.2rem,6vw,7rem)' }}>
-          WHAT OUR<br /><span style={{ WebkitTextStroke: '1px #ECECEC', color: 'transparent' }}>CUSTOMERS SAY</span>
+          WHAT OUR<br /><span style={{ WebkitTextStroke: '1px #1D1D1F', color: 'transparent' }}>CUSTOMERS SAY</span>
         </h2>
       </div>
 
@@ -53,9 +53,8 @@ export default function Testimonials() {
             <div key={s.l} className={`py-6 sm:py-8 px-4 sm:px-6 text-center
               ${i % 2 !== 1 ? 'border-r border-border' : ''}
               ${i < 2 ? 'border-b lg:border-b-0 border-border' : ''}
-              lg:${i < stats.length - 1 ? 'border-r' : ''} lg:border-border
             `}>
-              <p className="font-disp text-lime tracking-[.02em] leading-none mb-2"
+              <p className="font-disp text-ink tracking-[.02em] leading-none mb-2"
                 style={{ fontSize: 'clamp(2rem,4vw,4.5rem)' }}>{s.v}</p>
               <p className="font-mono text-[8px] tracking-[.22em] uppercase text-muted">{s.l}</p>
             </div>

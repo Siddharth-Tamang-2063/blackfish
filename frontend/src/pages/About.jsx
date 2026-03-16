@@ -58,7 +58,7 @@ export default function About() {
           <p className="font-mono text-[10px] tracking-[.2em] text-lime mb-2">/ OUR JOURNEY</p>
           <h2 className="font-disp text-ink uppercase leading-[.9]"
             style={{ fontSize: 'clamp(3rem,6vw,7rem)' }}>
-            HOW WE<br /><span style={{ WebkitTextStroke: '1px #ECECEC', color: 'transparent' }}>GOT HERE</span>
+            HOW WE<br /><span style={{ WebkitTextStroke: '1px #1D1D1F', color: 'transparent' }}>GOT HERE</span>
           </h2>
         </div>
         <div className="max-w-[1100px] mx-auto px-12 space-y-20">
@@ -87,7 +87,7 @@ export default function About() {
             <p className="font-mono text-[10px] tracking-[.2em] text-lime mb-2">/ WHAT WE STAND FOR</p>
             <h2 className="font-disp text-ink uppercase leading-[.9]"
               style={{ fontSize: 'clamp(3rem,6vw,7rem)' }}>
-              THREE<br /><span style={{ WebkitTextStroke: '1px #ECECEC', color: 'transparent' }}>THINGS</span>
+              THREE<br /><span style={{ WebkitTextStroke: '1px #1D1D1F', color: 'transparent' }}>THINGS</span>
             </h2>
           </FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-3 border border-border">
