@@ -79,7 +79,7 @@
   }
 
   .font-mono {
-    font-family: 'Geist Mono', 'SF Mono', Monaco, monospace;
+    font-family: 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace;
     font-weight: 500;
   }
 
