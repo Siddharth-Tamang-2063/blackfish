@@ -6,7 +6,6 @@ import { WishlistProvider } from './context/WishlistContext'
 import { AdminProvider } from './context/AdminContext'
 import Navbar from './components/layout/Navbar'
 import Footer from './components/layout/Footer'
-import { useCursor } from './hooks'
 
 // Code-split pages
 const Home             = lazy(() => import('./pages/Home'))
@@ -108,7 +107,6 @@ function AnimatedRoutes() {
 }
 
 function AppLayout() {
-  useCursor()
   const location = useLocation()
   const isAdmin = location.pathname.startsWith('/admin')
   return (
