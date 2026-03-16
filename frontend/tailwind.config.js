@@ -4,23 +4,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Apple-style black & white palette
-        bg: '#FFFFFF',   // pure white background
-        bg2: '#F5F5F7',   // apple light gray
-        bg3: '#E8E8ED',   // slightly darker gray
-        bg4: '#D2D2D7',   // border-ish
-        ink: '#1D1D1F',   // apple near-black
+        bg: '#FFFFFF',
+        bg2: '#F5F5F7',
+        bg3: '#EBEBED',
+        bg4: '#D2D2D7',
+        ink: '#1D1D1F',
         muted: 'rgba(29,29,31,0.55)',
-        lime: '#1D1D1F',   // accent = black (buttons etc)
+        lime: '#1D1D1F',
         lime2: '#000000',
-        red: '#FF3B30',   // keep red for sale badges
-        border: 'rgba(29,29,31,0.08)',
-        border2: 'rgba(29,29,31,0.18)',
+        red: '#FF3B30',
+        border: 'rgba(29,29,31,0.1)',
+        border2: 'rgba(29,29,31,0.2)',
       },
       fontFamily: {
         disp: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         edit: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-        mono: ['Geist Mono', 'SF Mono', 'Monaco', 'monospace'],
+        mono: ['JetBrains Mono', 'SF Mono', 'Monaco', 'Courier New', 'monospace'],
       },
       letterSpacing: {
         widest2: '0.25em',
@@ -28,10 +27,6 @@ export default {
       },
       transitionTimingFunction: {
         luxury: 'cubic-bezier(0.16,1,0.3,1)',
-      },
-      fontSize: {
-        '10vw': '10vw',
-        '13vw': '13vw',
       },
     },
   },
